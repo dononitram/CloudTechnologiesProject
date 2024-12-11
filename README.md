@@ -9,6 +9,6 @@ Full Name - github user link - discord username
 - Marshal Tawanda Dhliwayo 74274
 
 ### Python Working Group
-
+- Álvaro Tébar - https://github.com/fn2602 - fn2602
 ### VisualBasic Working Group
 
