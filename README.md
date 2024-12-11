@@ -6,7 +6,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | :---: | :---: | :---: | :---: |
 | ☁️ | Donato Martín | dono_nitram | [![GitHub](https://img.shields.io/badge/GitHub-dononitram-brightgreen)](https://github.com/dononitram) |
 | ☁️ | Adilet Dzhuraev | dzhuraev_adilet | [![GitHub](https://img.shields.io/badge/GitHub-Adiletbaike-brightgreen)](https://github.com/Adiletbaike) |
-| ☁️ | Nadir Mutallimov  | cr7_official | [![mutikn](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| ☁️ | Nadir Mutallimov  | cr7_official | [![GitHub](https://img.shields.io/badge/GitHub-mutikn-brightgreen)](https://github.com/mutikn) |
 | ☁️ | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
 | ☁️ | Oğuzhan Demir | demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan%20Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
