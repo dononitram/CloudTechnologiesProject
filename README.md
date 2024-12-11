@@ -8,8 +8,8 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | ☁️ | Adilet Dzhuraev | dzhuraev_adilet | [![GitHub](https://img.shields.io/badge/GitHub-Adiletbaike-brightgreen)](https://github.com/Adiletbaike) |
 | 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
 | 🐍 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
-| ☁️ | Oğuzhan Demir 59416| demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
-| ☁️ | Baizhan Dossanov | Baizhan17 | [![GitHub](https://github.com/Baizhan17)](https://github.com/Baizhan17) |
+| ☁️ | Oğuzhan Demir 59416| demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan-Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
+| ☁️ | Baizhan Dossanov | Baizhan17 | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) |
 | 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
