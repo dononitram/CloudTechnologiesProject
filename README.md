@@ -16,7 +16,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
 | 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
 | 📋 | Ismail Talha Yanik | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
-| 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/eldarzeynalli) |
 | 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 
 ## Organization of Work
