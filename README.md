@@ -17,7 +17,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
 | 📋 | Ismail Talha Yanik | StPhilippus | [![GitHub](https://img.shields.io/badge/GitHub-azizfilipus-brightgreen)](https://github.com/azizfilipus) |
 | 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) |
-| 📋 | Azad Azizade | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
+| 📋 | Azad Azizade | azadezizoff | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
 
 ## Organization of Work
 ![Organization of Work SVG](https://www.mermaidchart.com/raw/471424e6-6aae-452e-89aa-3a9d57dcf0e1?theme=light&version=v0.1&format=svg)
