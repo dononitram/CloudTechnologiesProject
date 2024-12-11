@@ -12,12 +12,12 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 🐍 | Baizhan Dossanov | Baizhan17 | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) |
 | 🐍 | Mohamed Bouguezine | mohamed_bgz | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) |
 | 🐍 | Dashqin | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
-| 🐍 | Azad | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
 | 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
 | 📋 | Ismail Talha Yanik | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) |
-| 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| 📋 | Azad Azizade | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
 
 ## Organization of Work
 ![Organization of Work SVG](https://www.mermaidchart.com/raw/471424e6-6aae-452e-89aa-3a9d57dcf0e1?theme=light&version=v0.1&format=svg)
