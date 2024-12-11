@@ -9,7 +9,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | ☁️ | Nadir Mutallimov  | cr7_official | [![mutikn](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | ☁️ | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
-| 🐍 | Oğuzhan Demir | demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan%20Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
+| ☁️ | Oğuzhan Demir | demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan%20Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
 | 🐍 | Baizhan Dossanov | Baizhan17 | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) |
 | 🐍 | Mohamed Bouguezine | mohamed_bgz | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) |
 | 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
