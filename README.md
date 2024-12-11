@@ -6,7 +6,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | :---: | :---: | :---: | :---: |
 | ☁️ | Donato Martín | dono_nitram | [![GitHub](https://img.shields.io/badge/GitHub-dononitram-brightgreen)](https://github.com/dononitram) |
 | ☁️ | Adilet Dzhuraev | dzhuraev_adilet | [![GitHub](https://img.shields.io/badge/GitHub-Adiletbaike-brightgreen)](https://github.com/Adiletbaike) |
-| ☁️ | Nadir Mutallimov  | cr7_official | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| ☁️ | Nadir Mutallimov  | cr7_official | [![mutikn](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | ☁️ | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
 | 🐍 | Oğuzhan Demir | demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan%20Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
@@ -14,7 +14,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 🐍 | Mohamed Bouguezine | mohamed_bgz | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) |
 | 🐍 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
-| 📋 | Rusif Safarov 73643| sefer.v | [![GitHub](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
+| 📋 | Rusif Safarov 73643| sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
 | 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
 | 📋 | NameHere | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
