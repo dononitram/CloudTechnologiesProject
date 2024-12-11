@@ -11,7 +11,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
 | 🐍 | Baizhan Dossanov | Baizhan17 | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) |
 | 🐍 | Mohamed Bouguezine | mohamed_bgz | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) |
-| 🐍 | Dashqin | DiscordUserHere | [![GitHub](https://img.shields.io/badge/GitHub-GithubUserHere-brightgreen)](https://github.com/GithubUserHere) |
+| 🐍 | Dashqin Mammadov | dasqinm | [![GitHub](https://img.shields.io/badge/GitHub-Dasqin55-brightgreen)](https://github.com/Dasqin55) |
 | 🐍 | Mohammed Kadri | mohammed_kadri | [![GitHub](https://img.shields.io/badge/GitHub-mohammed%20kadri-brightgreen)](https://github.com/mohammed-kadri) |
 | 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
 | 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
