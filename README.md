@@ -19,6 +19,9 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) |
 | 📋 | Azad Azizade | azadezizoff | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
 
+## Documentation
+Find the documentation in [this link](docs/Documentation.md).
+
 ## Organization of Work
 ![Organization of Work SVG](https://www.mermaidchart.com/raw/471424e6-6aae-452e-89aa-3a9d57dcf0e1?theme=light&version=v0.1&format=svg)
 Replace C# for Python instead
