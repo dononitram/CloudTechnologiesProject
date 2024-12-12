@@ -4,6 +4,8 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import List
 
+import numpy as np
+
 class CellData(BaseModel):
     row: int
     col: int
@@ -11,6 +13,14 @@ class CellData(BaseModel):
 
 class Item(BaseModel):
     cells: List[CellData]
+
+def checkArray(arr):
+    # Check if all subarrays have the same length
+    subarray_lengths = [len(subarray) for subarray in arr]
+    if len(set(subarray_lengths)) == 1:
+        return True
+    else:
+        return False
 
 app = FastAPI()
 
@@ -24,9 +34,25 @@ async def healthcheck():
 
 @app.post("/receive_params")
 async def receive_params(item: Item):
-    # Print the received parameters
-    for cell in item.cells:
-        print(f"Received cell at row {cell.row}, col {cell.col}, with value {cell.value}")
+        
+    X = []
+    Y = []
+        
+    i = 0
+    row = []
+    while i < len(item.cells) - 1:
+        row.append(float(item.cells[i].value))
+        if item.cells[i].row != item.cells[i+1].row:
+            if item.cells[i].row % 2 == 0:
+                X.append(row)
+                row = []
+            else:
+                Y.append(row)
+                row = []
+        i = i + 1
+    
+    print(np.array(X))
+    print(np.array(Y))
 
 if __name__ == "__main__":
     import uvicorn
