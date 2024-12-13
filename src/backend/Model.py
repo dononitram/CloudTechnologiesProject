@@ -9,8 +9,9 @@ class Model:
         self.model = LinearRegression()
         self.X, self.Y = [], []
         self.cells = modeldata.cells
+        self.set_XY()
     
-    def get_XY(self):
+    def set_XY(self):
         i = 0
         row = []
         while i < len(self.cells) - 1:
@@ -31,7 +32,9 @@ class Model:
         
         print(self.X)
         print(self.Y)
-        return np.array(self.X), np.array(self.Y)
+        
+        self.X = np.array(self.X)
+        self.Y = np.array(self.Y)
     
     def train(self):
 
@@ -45,9 +48,10 @@ class Model:
         self.model.fit(self.X, self.Y)
         return self.model
 
-    def predict(self, inputs: np.ndarray):
+    def predict(self, input: np.ndarray):
 
         try:
-            return self.model.predict(inputs)
+            parsed_input = np.array([float(i) for i in input.split(",")]).reshape(1, -1)
+            return self.model.predict(parsed_input)
         except NotFittedError:
             raise ValueError("Model is not trained yet. Call the `train` method first.")
