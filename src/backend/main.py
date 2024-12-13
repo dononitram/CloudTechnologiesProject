@@ -1,28 +1,12 @@
+from Model import Model
+from ModelData import ModelData
+
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from pydantic import BaseModel
-from typing import List
-
-import numpy as np
-
-class CellData(BaseModel):
-    row: int
-    col: int
-    value: str
-
-class Item(BaseModel):
-    cells: List[CellData]
-
-def checkArray(arr):
-    # Check if all subarrays have the same length
-    subarray_lengths = [len(subarray) for subarray in arr]
-    if len(set(subarray_lengths)) == 1:
-        return True
-    else:
-        return False
-
 app = FastAPI()
+
+models = {}
 
 @app.get("/healthcheck")
 async def healthcheck():
@@ -32,27 +16,25 @@ async def healthcheck():
     """
     return JSONResponse(content={"status": "ok"}, status_code=200)
 
-@app.post("/receive_params")
-async def receive_params(item: Item):
+@app.post("/train")
+async def receive_params(modeldata: ModelData):
+    try:
+        model = Model(modeldata)
+        print(model.get_XY())
+        model.train()
         
-    X = []
-    Y = []
-        
-    i = 0
-    row = []
-    while i < len(item.cells) - 1:
-        row.append(float(item.cells[i].value))
-        if item.cells[i].row != item.cells[i+1].row:
-            if item.cells[i].row % 2 == 0:
-                X.append(row)
-                row = []
-            else:
-                Y.append(row)
-                row = []
-        i = i + 1
-    
-    print(np.array(X))
-    print(np.array(Y))
+        return JSONResponse(content={"status": "ok", "message": "Model training successful.", "model": "model"}, status_code=200)
+    except Exception as e:
+        return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
+
+
+@app.get("/predict")
+async def predict(inputs: str, model: str):
+    try:
+        predictions = models[model].predict(inputs)
+        return JSONResponse(content={"status": "ok", "predictions": predictions.tolist()}, status_code=200)
+    except Exception as e:
+        return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
 if __name__ == "__main__":
     import uvicorn
