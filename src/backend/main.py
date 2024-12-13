@@ -20,19 +20,18 @@ async def healthcheck():
 async def receive_params(modeldata: ModelData):
     try:
         model = Model(modeldata)
-        print(model.get_XY())
         model.train()
-        
-        return JSONResponse(content={"status": "ok", "message": "Model training successful.", "model": "model"}, status_code=200)
+        models["model"] = model
+        return JSONResponse(content={"status": "ok", "message": "Model training successful."}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
 
 @app.get("/predict")
-async def predict(inputs: str, model: str):
+async def predict(input: str):
     try:
-        predictions = models[model].predict(inputs)
-        return JSONResponse(content={"status": "ok", "predictions": predictions.tolist()}, status_code=200)
+        predictions = models["model"].predict(input)
+        return JSONResponse(content={"status": "ok", "message": predictions.tolist()[0]}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
