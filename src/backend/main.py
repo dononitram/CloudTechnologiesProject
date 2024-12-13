@@ -31,7 +31,7 @@ async def receive_params(modeldata: ModelData):
 async def predict(input: str):
     try:
         predictions = models["model"].predict(input)
-        return JSONResponse(content={"status": "ok", "message": predictions.tolist()[0]}, status_code=200)
+        return JSONResponse(content={"status": "ok", "prediction": predictions.tolist()[0]}, status_code=200)
     except Exception as e:
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 

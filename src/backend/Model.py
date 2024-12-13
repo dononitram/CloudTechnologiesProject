@@ -15,7 +15,7 @@ class Model:
         i = 0
         row = []
         while i < len(self.cells) - 1:
-            row.append(float(self.cells[i].value))
+            row.append(float(self.cells[i].value.replace(",", ".")))
             
             if self.cells[i].row != self.cells[i+1].row:
                 if self.cells[i].row % 2 == 0:
@@ -27,7 +27,7 @@ class Model:
                     
             i = i + 1
         
-        row.append(float(self.cells[i].value))
+        row.append(float(self.cells[i].value.replace(",", ".")))
         self.Y.append(row)
         
         print(self.X)
@@ -51,7 +51,7 @@ class Model:
     def predict(self, input: np.ndarray):
 
         try:
-            parsed_input = np.array([float(i) for i in input.split(",")]).reshape(1, -1)
+            parsed_input = np.array([float(i) for i in [x.replace(",",".") for x in input.split(",")]]).reshape(1, -1)
             return self.model.predict(parsed_input)
         except NotFittedError:
             raise ValueError("Model is not trained yet. Call the `train` method first.")
