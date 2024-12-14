@@ -3,7 +3,7 @@ from ModelData import ModelData
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-
+import traceback
 app = FastAPI()
 
 models = {}
@@ -19,12 +19,20 @@ async def healthcheck():
 @app.post("/train")
 async def receive_params(modeldata: ModelData):
     try:
+        print(f"Received model data: {modeldata}")
         model = Model(modeldata)
+        print("Training model with the provided data...")
         model.train()
         models["model"] = model
+        print("Model training successful.")
         return JSONResponse(content={"status": "ok", "message": "Model training successful."}, status_code=200)
+    except ValueError as e:
+        print(f"ValueError: {e}")
+        return JSONResponse(content={"status": "error", "message": f"ValueError: {str(e)}"}, status_code=400)
     except Exception as e:
-        return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
+        print("An error occurred during model training:")
+        print(traceback.format_exc())
+        return JSONResponse(content={"status": "error", "message": f"An unexpected error occurred: {str(e)}"}, status_code=500)
 
 
 @app.get("/predict")

@@ -15,7 +15,11 @@ class Model:
         i = 0
         row = []
         while i < len(self.cells) - 1:
-            row.append(float(self.cells[i].value.replace(",", ".")))
+            try:
+                value = float(self.cells[i].value.replace(",", "."))
+            except ValueError:
+                raise ValueError(f"Invalid value: {self.cells[i].value}. Value must be a number.")
+            row.append(value)
             
             if self.cells[i].row != self.cells[i+1].row:
                 if self.cells[i].row % 2 == 0:
@@ -26,15 +30,17 @@ class Model:
                     row = []
                     
             i = i + 1
-        
-        row.append(float(self.cells[i].value.replace(",", ".")))
+
+        try:
+            value = float(self.cells[i].value.replace(",", "."))
+        except ValueError:
+            raise ValueError(f"Invalid value: {self.cells[i].value}. Value must be a number.")
+        row.append(value)
         self.Y.append(row)
-        
-        print(self.X)
-        print(self.Y)
         
         self.X = np.array(self.X)
         self.Y = np.array(self.Y)
+
     
     def train(self):
 
