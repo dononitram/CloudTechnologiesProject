@@ -30,9 +30,13 @@ async def receive_params(modeldata: ModelData):
 @app.get("/predict")
 async def predict(input: str):
     try:
-        predictions = models["model"].predict(input)
-        return JSONResponse(content={"status": "ok", "prediction": predictions.tolist()[0]}, status_code=200)
+        output = models["model"].predict(input.replace(",", "."))
+        output = output.tolist()[0]
+        prediction = ",".join([str(x) for x in output])
+        
+        return JSONResponse(content={"status": "ok", "prediction": prediction}, status_code=200)
     except Exception as e:
+        e.with_traceback()
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
 if __name__ == "__main__":
