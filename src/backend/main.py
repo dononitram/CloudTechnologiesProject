@@ -21,11 +21,21 @@ async def receive_params(modeldata: ModelData):
     try:
         print(f"Received model data: {modeldata}")
         model = Model(modeldata)
-        print("Training model with the provided data...")
+        
+        # generate hash
+        model_hash = model.generate_model_hash()
+        
+        print(f"Training model with hash: {model_hash}")
         model.train()
-        models["model"] = model
+        
+        # save the model in the dict using hash
+        models[model_hash] = model
         print("Model training successful.")
-        return JSONResponse(content={"status": "ok", "message": "Model training successful."}, status_code=200)
+        
+        return JSONResponse(
+            content={"status": "ok", "model_hash": model_hash, "message": "Model training successful."},
+            status_code=200
+        )
     except ValueError as e:
         print(f"ValueError: {e}")
         return JSONResponse(content={"status": "error", "message": f"ValueError: {str(e)}"}, status_code=400)
@@ -36,16 +46,23 @@ async def receive_params(modeldata: ModelData):
 
 
 @app.get("/predict")
-async def predict(input: str):
+async def predict(input: str, model_hash: str):
     try:
-        output = models["model"].predict(input.replace(",", "."))
-        output = output.tolist()[0]
-        prediction = ",".join([str(x) for x in output])
+        # check if the model with the following hash exists
+        if model_hash not in models:
+            return JSONResponse(content={"status": "error", "message": "Model not found."}, status_code=404)
         
+        # getting model with the following hash
+        model = models[model_hash]
+        output = model.predict(input.replace(",", "."))
+        output = output.tolist()[0]
+        
+        prediction = ",".join([str(x) for x in output])
         return JSONResponse(content={"status": "ok", "prediction": prediction}, status_code=200)
     except Exception as e:
-        e.with_traceback()
-        return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
+        print("An error occurred during prediction:")
+        print(traceback.format_exc())
+        return JSONResponse(content={"status": "error", "message": f"An unexpected error occurred: {str(e)}"}, status_code=500)
 
 if __name__ == "__main__":
     import uvicorn
