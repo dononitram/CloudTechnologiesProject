@@ -16,6 +16,7 @@ Project for Introduction to Cloud Technologies in Vistula University.
 | 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
 | 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
 | 📋 | Ismail Talha Yanik | StPhilippus | [![GitHub](https://img.shields.io/badge/GitHub-azizfilipus-brightgreen)](https://github.com/azizfilipus) |
+| 📋 | Ali Mammadov | Frosty222002 | [![GitHub](https://img.shields.io/badge/GitHub-ali222002-brightgreen)](https://github.com/ali222002) |
 | 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) |
 | 📋 | Azad Azizade | azadezizoff | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
 
