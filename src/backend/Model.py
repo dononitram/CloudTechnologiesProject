@@ -1,7 +1,6 @@
 import numpy as np
 
 from sklearn.linear_model import LinearRegression
-from sklearn.exceptions import NotFittedError
 
 class Model:
     
@@ -49,9 +48,5 @@ class Model:
         return self.model
 
     def predict(self, input: np.ndarray):
-
-        try:
-            parsed_input = np.array([float(i) for i in [x.replace(",",".") for x in input.split(",")]]).reshape(1, -1)
-            return self.model.predict(parsed_input)
-        except NotFittedError:
-            raise ValueError("Model is not trained yet. Call the `train` method first.")
+        parsed_input = np.array([float(i) for i in [x.replace(",",".") for x in input.split("%")]]).reshape(1, -1)
+        return self.model.predict(parsed_input)
