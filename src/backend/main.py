@@ -30,7 +30,8 @@ async def receive_params(modeldata: ModelData):
 @app.get("/predict")
 async def predict(input: str):
     try:
-        output = models["model"].predict(input.replace(",", "."))
+        print("Input: ", input)
+        output = models["model"].predict(input)
         output = output.tolist()[0]
         prediction = ",".join([str(x) for x in output])
         
