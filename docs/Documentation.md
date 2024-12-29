@@ -153,6 +153,35 @@ We have taken the following organizational decisions:
 The architecture decisions can be found in the Github Wiki: [Wiki ADRS](https://github.com/dononitram/CloudTechnologiesProject/wiki/ADRS)
 
 # 10. Quality Requirements
+![alt text](./quality-tree.png)
+
+## 10.2. Quality Scenarios
+
+### 10.2.1. Usage scenarios
+
+#### Privacy
+| **Usage Scenario**                                                                 | **System Response**                                                                                                                                                           |
+|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The user accesses the application and logs in using their credentials.            | The system validates the user’s credentials, and if they are correct, the user is redirected to the main interface. If not, an error message is displayed, requesting re-entry.|
+
+#### Performance
+
+| **Usage Scenario**                                                                                     | **System Response**                                                                                                                                               |
+|-------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| The user uploads a dataset for prediction analysis through the interface.                             | The system efficiently processes the uploaded data, sends it to the backend API for analysis, and retrieves results promptly for display.                       |
+
+#### Usability
+| **Usage Scenario**                                                                                         | **System Response**                                                                                                                        |
+|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| A new user accesses the application and interacts with the interface to understand its features.           | The user is guided through an intuitive design that clearly explains the options and functionalities, making it easy for them to navigate and use the application. |
+
+### 10.2.2 Change Scenarios
+#### Maintainability and Scalability
+| **Change Scenario**                                  | **System Response**                                                                                                                           |
+|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Add new prediction model                            | When a new prediction model is added to the system, existing functionalities should remain unaffected and continue to work as intended.       |
+| Integrate alternative login methods                 | When new login methods (e.g., OAuth, Google login) are added, existing login options should remain functional and seamlessly integrated.      |
+| Implement system hotfixes                           | Critical errors or bugs should be resolved and deployed in real-time without disrupting the user experience or requiring extended downtime.   |
 
 # 11. Risks and Technical Debt
 
