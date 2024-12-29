@@ -10,6 +10,26 @@ This document follows the arc42 standard for software architecture documentation
 
 ## 1.3. Stakeholders
 
+| **Team**                  | **Name**                                   | **Expectations**                                                   |
+|---------------------------|-------------------------------------------|-------------------------------------------------------------------|
+| **Cloud Infrastructure Team** | • Donato Martín                        |  Build and maintain a secure and scalable cloud infrastructure.    |
+|                           | • Adilet Dzhuraev                         |                                                                   |
+|                           | • Nadir Mutallimov                        |                                                                   |
+|                           | • Oğuzhan Demir                           |                                                                   |
+|                           |                           |                                                                   |
+| **Python Team**           | • Álvaro Tébar                            | Develop and integrate APIs and machine learning solutions.        |
+|                           | • Baizhan Dossanov                        |                                                                   |
+|                           | • Mohamed Bouguezine                      |                                                                   |
+|                           | • Dashqin Mammadov                        |                                                                   |
+|                           | • Mohammed Kadri                          |                                                                   |
+|                           |                           |                                                                   |
+| **Excel Integration Team** | • Marshal Tawanda Dhliwayo               | Automate and integrate Excel workflows with backend systems.      |
+|                           | • Rusif Safarov                           |                                                                   |
+|                           | • Ismail Talha Yanik                      |                                                                   |
+|                           | • Eldar Zeynalli                          |                                                                   |
+|                           | • Azad Azizade                            |                                                                   |
+
+
 # 2. Constraints
 
 ## 2.1. Technical Constraints
