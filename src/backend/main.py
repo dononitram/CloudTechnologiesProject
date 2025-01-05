@@ -46,25 +46,26 @@ async def receive_params(modeldata: ModelData):
 
 
 @app.get("/predict")
-async def predict(input: str = None):
-    if not input:
-        return JSONResponse(
-            content={"status": "error", "message": "'input' parameter is missing or empty"},
-            status_code=422,
-        )
+async def predict(input: str):
+    """
+    Asynchronously predicts the output based on the given input string.
 
+    Args:
+        input (str): The input string to be used for prediction.
+    Returns:
+        JSONResponse: A JSON response containing the prediction result with a status code of 200 if successful,
+                      or an error message with a status code of 500 if an exception occurs.
+    Raises:
+        Exception: If an error occurs during the prediction process.
+    """
+    
     try:
-        print(f"Received input: {input}")  # Debugging
-        if "model" not in models:
-            return JSONResponse(
-                content={"status": "error", "message": "Model is not trained. Please train the model first."},
-                status_code=500,
-            )
         output = models["model"].predict(input)
         prediction = ",".join([str(x) for x in output])
+        
         return JSONResponse(content={"status": "ok", "prediction": prediction}, status_code=200)
     except Exception as e:
-        print(f"Error during prediction: {e}")  # Debugging
+        e.with_traceback()
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
 if __name__ == "__main__":
