@@ -13,6 +13,8 @@ CloudTechnologiesProject is a powerful tool that allows users to train AI models
 | Baizhan Dossanov | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#baizhan) |
 | Mohamed Bouguezine | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#mohamed) |
 | Eldar Zeynalli | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#eldar) |
+| Nariman Aliyev | [![GitHub](https://img.shields.io/badge/GitHub-Nariman18-brightgreen)](https://github.com/Nariman18) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#Nariman18) |
+
 
 ## Installation and How To Use
 
