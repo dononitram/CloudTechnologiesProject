@@ -68,6 +68,5 @@ async def predict(input: str):
         e.with_traceback()
         return JSONResponse(content={"status": "error", "message": str(e)}, status_code=500)
 
-
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
