@@ -81,7 +81,7 @@ The main goal of this project is to develop a system that integrates cloud servi
 
 **Technical Context diagram**
 
-![alt text](./diagrams/technical-diagram.PNG)
+![alt text](./assets/technical-diagram.drawio.png)
 
 
 | **Communication Partners** | **Inputs**                                                                                     | **Outputs**                                                 |
@@ -153,7 +153,7 @@ We have taken the following organizational decisions:
 The architecture decisions can be found in the Github Wiki: [Wiki ADRS](https://github.com/dononitram/CloudTechnologiesProject/wiki/ADRS)
 
 # 10. Quality Requirements
-![alt text](./quality-tree.png)
+![alt text](./assets/quality-tree.drawio.png)
 
 ## 10.2. Quality Scenarios
 
