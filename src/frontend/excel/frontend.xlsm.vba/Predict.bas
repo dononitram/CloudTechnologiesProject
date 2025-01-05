@@ -19,7 +19,7 @@ Sub Predict()
     Set xhr = CreateObject("MSXML2.XMLHTTP")
     
     ' Initialize base URL for the API
-    url = "http://localhost:8000/predict" ' Replace with your API endpoint
+    url = "http://158.101.170.44:8000/predict" ' Replace with your API endpoint
     
     ' Initialize the input values string and flag for input validation
     inputValues = ""

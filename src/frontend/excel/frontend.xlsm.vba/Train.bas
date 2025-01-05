@@ -10,7 +10,7 @@ Sub Train()
     Set xhr = CreateObject("MSXML2.XMLHTTP")
     
     ' Initialize base URL for the API
-    url = "http://localhost:8000/train" ' Replace with your API endpoint
+    url = "http://158.101.170.44:8000/train" ' Replace with your API endpoint
     
     ' Initialize the JSON data array
     jsonData = "{""cells"":["
