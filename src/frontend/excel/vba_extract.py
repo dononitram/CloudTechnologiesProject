@@ -1,3 +1,12 @@
+# SCRIPT DISCLAIMER
+#
+# The following script is a modified version of the script provided by the following source:
+# https://www.xltrail.com/blog/auto-export-vba-commit-hook
+#
+# It only extracts the VBA code from the Excel files and saves them in a separate folder.
+# The output .bas files are only used for analysis, keeping track of the VBA code changes and for the VBA code review.
+# They do not affect the Excel files in any way.
+
 import os
 import shutil
 from oletools.olevba3 import VBA_Parser
