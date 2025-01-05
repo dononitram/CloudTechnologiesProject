@@ -1,5 +1,4 @@
 # CloudTechnologiesProject
-Project for Introduction to Cloud Technologies in Vistula University.
 
 ## Collaborators
 

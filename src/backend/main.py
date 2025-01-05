@@ -3,8 +3,8 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from Model import Model
-from ModelData import ModelData
+from model.model import Model
+from schemas.model_data import ModelData
 
 app = FastAPI()
 
