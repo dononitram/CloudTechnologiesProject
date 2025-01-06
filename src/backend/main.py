@@ -1,10 +1,12 @@
 import uvicorn
 
+
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
 from model.model import Model
 from schemas.model_data import ModelData
+print("XD")
 
 app = FastAPI()
 
