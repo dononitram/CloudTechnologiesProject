@@ -1,3 +1,4 @@
+Attribute VB_Name = "Predict"
 Sub Predict()
     Dim xhr As Object
     Dim url As String
@@ -133,4 +134,8 @@ Function ExtractJsonField(json As String, fieldName As String) As String
     Else
         ExtractJsonField = ""
     End If
+
+    'jajaxdxd
+
 End Function
+
