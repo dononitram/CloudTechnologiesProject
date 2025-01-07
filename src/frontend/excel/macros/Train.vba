@@ -6,13 +6,33 @@ Sub Train()
     Dim row As Long, col As Long
     Dim jsonData As String
     Dim cell As Range
+    Dim configFilePath As String
+    Dim jsonContent As String
+    Dim jsonObject As Object
     
     ' Create the XMLHttpRequest object
     Set xhr = CreateObject("MSXML2.XMLHTTP")
     
+    ' Define the path to the config.json file (same directory as the workbook)
+    configFilePath = ThisWorkbook.Path & "\config.json"
+
+    ' Read the content of the config.json file
+    On Error Resume Next
+    jsonContent = CreateObject("Scripting.FileSystemObject").OpenTextFile(configFilePath, 1).ReadAll
+    On Error GoTo 0
+
+    ' Extract host and port using your custom function
+    Dim host As String, port As String
+    host = ExtractJsonField(jsonContent, "host")
+    port = ExtractJsonField(jsonContent, "port")
+
+    ' Set default values if fields are missing
+    If host = "" Then host = "localhost" '"158.101.170.44"
+    If port = "" Then port = "8000"
+
     ' Initialize base URL for the API
-    url = "http://localhost:8000/train" ' Replace with your API endpoint
-    
+    url = "http://" & host & ":" & port & "/train"
+   
     ' Initialize the JSON data array
     jsonData = "{""cells"":["
     
@@ -51,10 +71,10 @@ Sub Train()
     response = xhr.responseText
     
     ' Display the response in the Immediate Window (Ctrl+G to see it)
-    Debug.Print response
+    ' Debug.Print response
     
     ' You can also store the response in a worksheet cell
     ' ThisWorkbook.Sheets(1).Range("A1").Value = response
 
-  'jaja
 End Sub
+
