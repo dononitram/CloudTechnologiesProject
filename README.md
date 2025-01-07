@@ -1,33 +1,59 @@
 # CloudTechnologiesProject
-Project for Introduction to Cloud Technologies in Vistula University.
+
+CloudTechnologiesProject is a powerful tool that allows users to train AI models without needing to know how to code, using Microsoft Excel as a frontend. By leveraging VBA macros, this project provides an intuitive interface within Excel, enabling users to easily integrate and enhance cloud-based technologies for their data processing and analysis tasks.
 
 ## Collaborators
-| 📚 Team | 🧑‍💻 Name | 🎮 Discord | 😺 GitHub |
-| :---: | :---: | :---: | :---: |
-| ☁️ | Donato Martín | dono_nitram | [![GitHub](https://img.shields.io/badge/GitHub-dononitram-brightgreen)](https://github.com/dononitram) |
-| ☁️ | Adilet Dzhuraev | dzhuraev_adilet | [![GitHub](https://img.shields.io/badge/GitHub-Adiletbaike-brightgreen)](https://github.com/Adiletbaike) |
-| ☁️ | Nadir Mutallimov  | cr7_official | [![GitHub](https://img.shields.io/badge/GitHub-mutikn-brightgreen)](https://github.com/mutikn) |
-| ☁️ | Oğuzhan Demir | demir09859 | [![GitHub](https://img.shields.io/badge/GitHub-Oguzhan%20Demir-brightgreen)](https://github.com/Oguzhan-Demir) |
-| 🐍 | Álvaro Tébar  | fn2602 | [![GitHub](https://img.shields.io/badge/GitHub-fn2602-brightgreen)](https://github.com/fn2602) |
-| 🐍 | Baizhan Dossanov | Baizhan17 | [![GitHub](https://img.shields.io/badge/GitHub-Baizhan17-brightgreen)](https://github.com/Baizhan17) |
-| 🐍 | Mohamed Bouguezine | mohamed_bgz | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) |
-| 🐍 | Dashqin Mammadov | dasqinm | [![GitHub](https://img.shields.io/badge/GitHub-Dasqin55-brightgreen)](https://github.com/Dasqin55) |
-| 🐍 | Mohammed Kadri | _devshot | [![GitHub](https://img.shields.io/badge/GitHub-mohammed%20kadri-brightgreen)](https://github.com/mohammed-kadri) |
-| 📋 | Marshal Tawanda Dhliwayo | teevas_74274 | [![GitHub](https://img.shields.io/badge/GitHub-Teevas74274-brightgreen)](https://github.com/Teevas74274) |
-| 📋 | Rusif Safarov | sefer.v | [![seferovrusif](https://img.shields.io/badge/GitHub-seferovrusif-brightgreen)](https://github.com/seferovrusif) |
-| 📋 | Ismail Talha Yanik | StPhilippus | [![GitHub](https://img.shields.io/badge/GitHub-azizfilipus-brightgreen)](https://github.com/azizfilipus) |
-| 📋 | Eldar Zeynalli | imp______ | [![GitHub](https://img.shields.io/badge/GitHub-eldarzeynalli-brightgreen)](https://github.com/eldarzeynalli) |
-| 📋 | Azad Azizade | azadezizoff | [![GitHub](https://img.shields.io/badge/GitHub-freedom2003-brightgreen)](https://github.com/freedom2003) |
 
-## Organization of Work
-![Organization of Work SVG](https://www.mermaidchart.com/raw/471424e6-6aae-452e-89aa-3a9d57dcf0e1?theme=light&version=v0.1&format=svg)
-Replace C# for Python instead
+| 🧑‍💻 Name | 😺 GitHub | Self Reports |
+| - | - | - |
+| Donato Martín | [![GitHub](https://img.shields.io/badge/GitHub-dononitram-brightgreen)](https://github.com/dononitram) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#donato) |
+| Mohamed Bouguezine | [![GitHub](https://img.shields.io/badge/GitHub-mohBgz-brightgreen)](https://github.com/mohBgz) | [![Self Report](https://img.shields.io/badge/Self%20Report-View-blue)](https://github.com/dononitram/CloudTechnologiesProject/wiki/Self-Reports#mohamed) |
 
-### ☁️ Cloud Infrastructure Team
-https://cloud-infrastructure-tea-cvyscmi.gamma.site/
+## Installation and How To Use
 
-### 🐍 Python Team
-https://csharp-cloud-team-pjj3zlk.gamma.site/
+0. Clone the repository
+```sh
+git clone https://github.com/dononitram/CloudTechnologiesProject
+```
+1. First install the necessary python dependencies:
+```sh
+pip install -r requirements.txt
+```
+2. After that run the server:
+```sh
+python src/backend/main.py
+```
+3. Once the server is running open the frontend spreadsheet located in the src/frontend/excel directory (open source under development).
+4. Place the training data in the training area (8C Cell onwards horizontally and vertically) in the following way.
+```
+Training Input
+Expected Output
+Training Input
+Expected Output
+...
+```
+5. Hit Train
+6. Place your input in the prediction area (Rows 4 and 5 from the column 4 onwards).
+7. Hit Predict
 
-### 📋Excel Integration Team
-https://excel-integration-team-1xkbtep.gamma.site/
+### Example: Teaching the Model Simple Addition
+
+Witness the magic of AI by teaching the model to perform simple addition of two parameters. Remember, the relationship between inputs and outputs isn't strictly 2:1; it can be n:n where n ≥ 1. 
+![Example](docs/assets/working_example.png)
+
+## Documentation
+
+Dive into our comprehensive [📄 documentation](docs/Documentation.md) to unlock the full potential of CloudTechnologiesProject.
+
+## Licensing
+
+This project is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. See the [LICENSE.txt](LICENSE.txt) file for details.
+
+## Excel Dependency Notice
+
+This project includes VBA macros for use with Microsoft Excel. Microsoft Excel is proprietary software and is not covered under this license. Users must obtain their own licensed copy of Excel.
+
+## Disclaimer
+
+This project is an independent tool developed by [Your Name/Organization]. It is not affiliated with, endorsed by, or sponsored by Microsoft Corporation.
+This tool requires **Microsoft Excel** to function. Users must have a valid license to Microsoft Excel to use this tool. Microsoft Excel is a registered trademark of Microsoft Corporation.
