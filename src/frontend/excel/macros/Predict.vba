@@ -12,20 +12,48 @@ Sub Predict()
     Dim decimalSeparator As String
     Dim col As Long
     Dim hasInput As Boolean
+    Dim configFilePath As String
+    Dim jsonContent As String
+    Dim jsonObject As Object
+    Dim modelHash As String
     
+    ' Retrieve the model hash from the cell
+    modelHash = ThisWorkbook.Sheets(1).Range("A1").Value
+    If modelHash = "" Then
+        MsgBox "Error: Model hash not found. Train a model first.", vbExclamation
+        Exit Sub
+    End If
+
     ' Get the system's decimal separator
     decimalSeparator = Application.International(xlDecimalSeparator)
-    
+
     ' Create the XMLHttpRequest object
     Set xhr = CreateObject("MSXML2.XMLHTTP")
-    
+
+    ' Define the path to the config.json file (same directory as the workbook)
+    configFilePath = ThisWorkbook.Path & "\config.json"
+
+    ' Read the content of the config.json file
+    On Error Resume Next
+    jsonContent = CreateObject("Scripting.FileSystemObject").OpenTextFile(configFilePath, 1).ReadAll
+    On Error GoTo 0
+
+    ' Extract host and port using your custom function
+    Dim host As String, port As String
+    host = ExtractJsonField(jsonContent, "host")
+    port = ExtractJsonField(jsonContent, "port")
+
+    ' Set default values if fields are missing
+    If host = "" Then host = "localhost" '"158.101.170.44"
+    If port = "" Then port = "8000"
+
     ' Initialize base URL for the API
-    url = "http://localhost:8000/predict" ' Replace with your API endpoint
-    
+    url = "http://" & host & ":" & port & "/predict"
+
     ' Initialize the input values string and flag for input validation
     inputValues = ""
     hasInput = False
-    
+
     ' Loop through cells in row 4 (starting from column C) to check for input
     For col = 3 To ThisWorkbook.Sheets(1).UsedRange.Columns.Count
         Set cell = ThisWorkbook.Sheets(1).Cells(4, col)
@@ -38,68 +66,67 @@ Sub Predict()
             inputValues = inputValues & URLEncode(cell.Value)
         End If
     Next col
-    
+
     ' Validate that input row is not empty
     If Not hasInput Then
         MsgBox "Error: No input found in row 4. Please provide input values.", vbExclamation
         Exit Sub
     End If
-    
+
     ' Build the full URL with the query parameters
-    randomValue = Rnd()
-    url = url & "?input=" & inputValues & "&rand=" & randomValue
+    randomValue = Rnd() ' Random value to prevent caching
+    url = url & "?input=" & inputValues & "&model_hash=" & modelHash & "&rand=" & randomValue
     
     ' Open the request (GET method)
     xhr.Open "GET", url, False
-    
+
     ' Set necessary headers to prevent caching
     xhr.setRequestHeader "Content-Type", "application/json"
-    
+
     ' Send the GET request
     xhr.Send
     
-    ' Error handling for the request
+    ' Process the response
     If xhr.Status = 200 Then
         response = xhr.responseText
-    Else
-        MsgBox "Error: " & xhr.Status & " - " & xhr.statusText, vbCritical
-        Exit Sub
-    End If
-    
-    ' Extract the prediction field using a more robust JSON parsing method
-    prediction = ExtractJsonField(response, "prediction")
-    If prediction = "" Then
-        MsgBox "Error: 'prediction' field not found in response", vbExclamation
-        Exit Sub
-    End If
-    
-    ' Split predictions by comma
-    predictionsArray = Split(prediction, ",")
-    
-    ' Replace the decimal separator in each value (if needed)
-    For i = 0 To UBound(predictionsArray)
-        If decimalSeparator <> "." Then
-            predictionsArray(i) = Replace(predictionsArray(i), ".", decimalSeparator)
+        ' Extract the prediction field from the response
+        prediction = ExtractJsonField(response, "prediction")
+        
+        ' Check if the prediction field is empty
+        If prediction = "" Then
+            MsgBox "Error: 'prediction' field not found in response.", vbExclamation
+            Exit Sub
         End If
-    Next i
+        
+        ' Split predictions by comma
+        predictionsArray = Split(prediction, ",")
+        
+        ' Replace the decimal separator in each value (if needed)
+        For i = 0 To UBound(predictionsArray)
+            If decimalSeparator <> "." Then
+                predictionsArray(i) = Replace(predictionsArray(i), ".", decimalSeparator)
+            End If
+        Next i
+        
+        ' Clear row 5 from column C onwards before writing new values
+        ThisWorkbook.Sheets(1).Rows(5).Columns("C:Z").ClearContents
+        
+        ' Write each prediction value in the corresponding columns starting from C5
+        For i = 0 To UBound(predictionsArray)
+            ThisWorkbook.Sheets(1).Cells(5, 3 + i).Value = CDbl(Trim(predictionsArray(i)))
+        Next i
+        
+        ' Notify the user of successful prediction
+        MsgBox "Prediction completed successfully.", vbInformation
+    Else
+        ' Handle errors
+        MsgBox "Error during prediction: " & xhr.Status & " - " & xhr.statusText, vbCritical
+    End If
     
-    ' Clear row 5 from column C onwards before writing new values
-    ThisWorkbook.Sheets(1).Rows(5).Columns("C:Z").ClearContents
-    
-    ' Write each prediction value in the corresponding columns starting from C5
-    For i = 0 To UBound(predictionsArray)
-        ThisWorkbook.Sheets(1).Cells(5, 3 + i).Value = CDbl(Trim(predictionsArray(i))) ' Ensure proper conversion to decimal
-    Next i
-    
-    ' Store the raw response in a worksheet cell for debugging (optional)
-    ' ThisWorkbook.Sheets(1).Range("A1").Value = response
-    
-    ' Clear the xhr object
+    ' Clear the XMLHttpRequest object
     Set xhr = Nothing
-    
 End Sub
 
-' Helper function to URL encode the input values
 Function URLEncode(str As String) As String
     Dim result As String
     Dim i As Long
@@ -116,11 +143,10 @@ Function URLEncode(str As String) As String
     URLEncode = result
 End Function
 
-' Helper function to extract a JSON field value
 Function ExtractJsonField(json As String, fieldName As String) As String
     Dim startPos As Long, endPos As Long, fieldValue As String
     Dim searchPattern As String
-    searchPattern = """" & fieldName & """:" & """"
+    searchPattern = """" & fieldName & """:" & """" ' e.g., "prediction":
     startPos = InStr(json, searchPattern)
     If startPos > 0 Then
         startPos = startPos + Len(searchPattern)
@@ -134,8 +160,6 @@ Function ExtractJsonField(json As String, fieldName As String) As String
     Else
         ExtractJsonField = ""
     End If
-
-    'jajaxdxd
 
 End Function
 
