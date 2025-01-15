@@ -8,7 +8,7 @@ Sub Train()
     Dim cell As Range
     Dim configFilePath As String
     Dim jsonContent As String
-    Dim jsonObject As Object
+    Dim modelHash As String
     
     ' Create the XMLHttpRequest object
     Set xhr = CreateObject("MSXML2.XMLHTTP")
@@ -21,13 +21,13 @@ Sub Train()
     jsonContent = CreateObject("Scripting.FileSystemObject").OpenTextFile(configFilePath, 1).ReadAll
     On Error GoTo 0
 
-    ' Extract host and port using your custom function
+    ' Extract host and port using the ExtractJsonField helper function
     Dim host As String, port As String
     host = ExtractJsonField(jsonContent, "host")
     port = ExtractJsonField(jsonContent, "port")
 
     ' Set default values if fields are missing
-    If host = "" Then host = "localhost" '"158.101.170.44"
+    If host = "" Then host = "localhost"
     If port = "" Then port = "8000"
 
     ' Initialize base URL for the API
@@ -61,20 +61,29 @@ Sub Train()
     ' Open the request (POST method in this case)
     xhr.Open "POST", url, False
     
-    ' Set any necessary headers (optional)
+    ' Set necessary headers
     xhr.setRequestHeader "Content-Type", "application/json"
     
     ' Send the request with the JSON data in the body
     xhr.Send jsonData
     
-    ' Get the response
-    response = xhr.responseText
+    ' Process the response
+    If xhr.Status = 200 Then
+        response = xhr.responseText
+        ' Extract the model hash from the response
+        modelHash = ExtractJsonField(response, "model_hash")
+        
+        ' Store the model hash in a specific cell (e.g., A1)
+        ThisWorkbook.Sheets(1).Range("A1").Value = modelHash
+        
+        ' Notify the user
+        MsgBox "Training successful. Model hash: " & modelHash, vbInformation
+    Else
+        ' Handle errors
+        MsgBox "Error during training: " & xhr.Status & " - " & xhr.statusText, vbCritical
+    End If
     
-    ' Display the response in the Immediate Window (Ctrl+G to see it)
-    ' Debug.Print response
-    
-    ' You can also store the response in a worksheet cell
-    ' ThisWorkbook.Sheets(1).Range("A1").Value = response
-
+    ' Clear the XMLHttpRequest object
+    Set xhr = Nothing
 End Sub
 

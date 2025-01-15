@@ -14,14 +14,21 @@ Sub Predict()
     Dim hasInput As Boolean
     Dim configFilePath As String
     Dim jsonContent As String
-    Dim jsonObject As Object
-
+    Dim modelHash As String
+    
+    ' Retrieve the model hash from a specific cell
+    modelHash = ThisWorkbook.Sheets(1).Range("A1").Value
+    If modelHash = "" Then
+        MsgBox "Error: Model hash not found. Train a model first.", vbExclamation
+        Exit Sub
+    End If
+    
     ' Get the system's decimal separator
     decimalSeparator = Application.International(xlDecimalSeparator)
-
+    
     ' Create the XMLHttpRequest object
     Set xhr = CreateObject("MSXML2.XMLHTTP")
-
+    
     ' Define the path to the config.json file (same directory as the workbook)
     configFilePath = ThisWorkbook.Path & "\config.json"
 
@@ -30,13 +37,13 @@ Sub Predict()
     jsonContent = CreateObject("Scripting.FileSystemObject").OpenTextFile(configFilePath, 1).ReadAll
     On Error GoTo 0
 
-    ' Extract host and port using your custom function
+    ' Extract host and port using the ExtractJsonField helper function
     Dim host As String, port As String
     host = ExtractJsonField(jsonContent, "host")
     port = ExtractJsonField(jsonContent, "port")
 
     ' Set default values if fields are missing
-    If host = "" Then host = "localhost" '"158.101.170.44"
+    If host = "" Then host = "localhost"
     If port = "" Then port = "8000"
 
     ' Initialize base URL for the API
@@ -66,8 +73,8 @@ Sub Predict()
     End If
 
     ' Build the full URL with the query parameters
-    randomValue = Rnd()
-    url = url & "?input=" & inputValues & "&rand=" & randomValue
+    randomValue = Rnd() ' Random value to prevent caching
+    url = url & "?input=" & inputValues & "&model_hash=" & modelHash & "&rand=" & randomValue
 
     ' Open the request (GET method)
     xhr.Open "GET", url, False
@@ -78,46 +85,47 @@ Sub Predict()
     ' Send the GET request
     xhr.Send
 
-    ' Error handling for the request
+    ' Process the response
     If xhr.Status = 200 Then
         response = xhr.responseText
-    Else
-        MsgBox "Error: " & xhr.Status & " - " & xhr.statusText, vbCritical
-        Exit Sub
-    End If
-
-    ' Extract the prediction field using a more robust JSON parsing method
-    prediction = ExtractJsonField(response, "prediction")
-    If prediction = "" Then
-        MsgBox "Error: 'prediction' field not found in response", vbExclamation
-        Exit Sub
-    End If
-
-    ' Split predictions by comma
-    predictionsArray = Split(prediction, ",")
-
-    ' Replace the decimal separator in each value (if needed)
-    For i = 0 To UBound(predictionsArray)
-        If decimalSeparator <> "." Then
-            predictionsArray(i) = Replace(predictionsArray(i), ".", decimalSeparator)
+        ' Extract the prediction field from the response
+        prediction = ExtractJsonField(response, "prediction")
+        
+        ' Check if the prediction field is empty
+        If prediction = "" Then
+            MsgBox "Error: 'prediction' field not found in response.", vbExclamation
+            Exit Sub
         End If
-    Next i
+        
+        ' Split predictions by comma
+        predictionsArray = Split(prediction, ",")
 
-    ' Clear row 5 from column C onwards before writing new values
-    ThisWorkbook.Sheets(1).Rows(5).Columns("C:Z").ClearContents
+        ' Replace the decimal separator in each value (if needed)
+        For i = 0 To UBound(predictionsArray)
+            If decimalSeparator <> "." Then
+                predictionsArray(i) = Replace(predictionsArray(i), ".", decimalSeparator)
+            End If
+        Next i
 
-    ' Write each prediction value in the corresponding columns starting from C5
-    For i = 0 To UBound(predictionsArray)
-        ThisWorkbook.Sheets(1).Cells(5, 3 + i).Value = CDbl(Trim(predictionsArray(i))) ' Ensure proper conversion to decimal
-    Next i
+        ' Clear row 5 from column C onwards before writing new values
+        ThisWorkbook.Sheets(1).Rows(5).Columns("C:Z").ClearContents
 
-    ' Store the raw response in a worksheet cell for debugging (optional)
-    ' ThisWorkbook.Sheets(1).Range("A1").Value = response
+        ' Write each prediction value in the corresponding columns starting from C5
+        For i = 0 To UBound(predictionsArray)
+            ThisWorkbook.Sheets(1).Cells(5, 3 + i).Value = CDbl(Trim(predictionsArray(i))) ' Ensure proper conversion to decimal
+        Next i
 
-    ' Clear the xhr object
+        ' Notify the user of successful prediction
+        MsgBox "Prediction completed successfully.", vbInformation
+    Else
+        ' Handle errors
+        MsgBox "Error during prediction: " & xhr.Status & " - " & xhr.statusText, vbCritical
+    End If
+
+    ' Clear the XMLHttpRequest object
     Set xhr = Nothing
-
 End Sub
+
 
 ' Helper function to URL encode the input values
 Function URLEncode(str As String) As String
